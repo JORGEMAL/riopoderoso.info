@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "EventoSistema";
+    IList<string> roles = (IList<string>)ViewBag.roles;
+}
+
+<h1>EventoSistema</h1>
+<hr />
+
+<h2>Current logged user name</h2>
+@ViewBag.loggedUserName
+<hr />
+
+@{
+    <h2>User Roles</h2>
+
+    if (roles.Count == 0)
+    {
+        <div>No roles exist</div>
+    }
+
+    foreach (string item in roles)
+    {
+        @item
+    }
+}
+<hr />
+
+<h2>Connection String Name</h2>
+@ViewBag.ConnectionStringName
+<hr />
+
+<h2>Connection String Content</h2>
+@ViewBag.ConnectionStringContent
+<hr />
+
+<h2>Host</h2>
+@ViewBag.host
+<hr />

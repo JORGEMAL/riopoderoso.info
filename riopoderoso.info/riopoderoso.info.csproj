@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <UserSecretsId>aspnet-riopoderoso.info-9A766C1F-6B5D-402A-B815-5255CAE8A0D5</UserSecretsId>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Devart.Data.PostgreSql.EFCore" Version="7.13.1437" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Syncfusion.EJ2.AspNet.Core" Version="17.2.0.46" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="wwwroot\SystemEvents\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Reference Include="Devart.Data">
+      <HintPath>..\..\..\Program Files (x86)\Devart\dotConnect\PostgreSQL\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.PostgreSql">
+      <HintPath>..\..\..\Program Files (x86)\Devart\dotConnect\PostgreSQL\Devart.Data.PostgreSql.dll</HintPath>
+    </Reference>
+    <Reference Include="Elisur">
+      <HintPath>..\..\..\Visual Studio 2019 Class Libraries\Elisur\Elisur\bin\Debug\netcoreapp2.2\Elisur.dll</HintPath>
+    </Reference>
+    <Reference Include="riopoderoso">
+      <HintPath>..\..\..\Visual Studio 2019 Class Libraries\riopoderoso\riopoderoso\bin\Debug\netcoreapp2.2\riopoderoso.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

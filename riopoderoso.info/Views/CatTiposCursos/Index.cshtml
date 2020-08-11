@@ -1,0 +1,38 @@
+﻿@model IEnumerable<TiposCursos>
+@using riopoderoso
+
+<h1>Catálogo de Tipos de Cursos</h1>
+
+@* RemoteSaveAdaptor expects an array of objects (object[]) *@
+<ejs-grid id="TiposCursos" width="50%" allowPaging="true" allowTextWrap="true" gridLines="Both" toolbar="@(new List<string>() { "Add", "Edit", "Delete", "Cancel", "Update"  })">
+    <e-data-manager json="@Model.ToArray()" adaptor="RemoteSaveAdaptor" insertUrl="Insert" updateUrl="Update" removeUrl="Delete"></e-data-manager>
+    <e-grid-editSettings allowDeleting="true" allowEditing="true" allowAdding="true" mode="Dialog" showDeleteConfirmDialog="true"></e-grid-editSettings>
+    <e-grid-columns>
+        <e-grid-column field="Id" headerText="ID" type="number" visible="false" isPrimaryKey="true"></e-grid-column>
+        <e-grid-column field="Nombre" headerText="NOMBRE" type="string"></e-grid-column>
+    </e-grid-columns>
+</ejs-grid>
+
+    @*<script>
+
+             SET DIALOG WIDTH, HEIGHT AND HEADER.
+            function actionComplete(args) {
+                if ((args.requestType === 'beginEdit' || args.requestType === 'add')) {
+                    var dialog = args.dialog;
+                    dialog.height = '40%';
+                    dialog.width = '50%';
+
+                    // Change header of dialog.
+                    dialog.header = args.requestType === 'beginEdit' ? 'INFORMACIÓN DE ' + args.rowData['tcr_nombre'] : 'AGREGA NUEVO REGISTRO';
+                }
+            }
+
+        </script>*@
+
+    @*<style>
+
+             Override Dialog height so it can be set manually.
+            .e-dialog.e-edit-dialog {
+                max-height: none !important;
+            }
+        </style>*@

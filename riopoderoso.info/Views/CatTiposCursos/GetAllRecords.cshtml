@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "GetAllRecords";
+}
+
+<h1>Get All Records</h1>
+
+<ejs-grid id="TiposCursos" allowPaging="true" allowTextWrap="true" gridLines="Both" toolbar="@(new List<string>() { "Add","Delete","Update", "Cancel" })">
+    <e-data-manager json="@ViewBag.result" adaptor="RemoteSaveAdaptor" insertUrl="Insert" updateUrl="Update" removeUrl="Delete"></e-data-manager>
+    <e-grid-editSettings allowDeleting="true" allowEditing="true" allowAdding="true"></e-grid-editSettings>
+    <e-grid-columns>
+        <e-grid-column field="Id" headerText="ID" type="number" format="N" visible="false" isPrimaryKey="true"></e-grid-column>
+        <e-grid-column field="Nombre" headerText="NOMBRE" type="string" width="150"></e-grid-column>
+    </e-grid-columns>
+</ejs-grid>
+
